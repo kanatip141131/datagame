@@ -2,7 +2,7 @@
 require_once 'config/config.php';
 
 try {
-    // แสดงข้อมูลทั้งหมดในตาราง user
+    // Display all data in the user table
     $sql = "SELECT * FROM user";
     $stmt = $pdo->query($sql);
     
@@ -14,7 +14,7 @@ try {
     }
     echo "</pre>";
 
-    // แสดงโครงสร้างตาราง user
+    // Display user table structure
     $sql = "DESCRIBE user";
     $stmt = $pdo->query($sql);
     
