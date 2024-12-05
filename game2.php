@@ -74,7 +74,7 @@
                 <div class="flex justify-between items-center mb-2">
                     <h1 class="text-xl font-bold text-blue-400">Level 2</h1>
                     <div class="flex items-center space-x-4">
-                        <span class="text-sm">Level 2 of 80</span>
+                        <span class="text-sm">Level 2 of 12</span>
                         <div class="flex space-x-1">
                             <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&lt;</button>
                             <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&gt;</button>
