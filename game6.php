@@ -129,7 +129,7 @@ hash_table.put(<span class="text-green-300">"orange"</span>, 3)
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
                             class="flex-1 bg-gray-900 text-white p-3 rounded-lg font-mono text-sm resize-none h-64"
-                            placeholder="เขียนคำตอบของคุณที่นี่..."></textarea>
+                            placeholder="เขียนโค้ดของคุณที่นี่..."></textarea>
 
                         <!-- Control Buttons -->
                         <button onclick="checkCode()" 

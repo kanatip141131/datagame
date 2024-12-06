@@ -85,8 +85,8 @@
                 <div class="grid grid-cols-2 gap-4 flex-1 overflow-hidden">
                     <!-- Left Column: Problem Description -->
                     <div class="bg-gray-700 rounded-lg p-3 overflow-auto">
-                        <h2 class="text-lg font-bold mb-2">Problem Description</h2>
-                        <p class="text-sm text-gray-300 mb-2">Complete the missing parts to implement a Binary Search Tree (BST) insertion and validation. The BST must maintain the property where left child is less than parent and right child is greater than parent:</p>
+                        <h2 class="text-lg font-bold mb-2">คำอธิบายโจทย์</h2>
+                        <p class="text-sm text-gray-300 mb-2">จงเติมส่วนที่หายไปเพื่อสร้าง Binary Search Tree (BST) และตรวจสอบความถูกต้องของมัน โดย BST ต้องรักษาคุณสมบัติที่ลูกซ้ายมีค่าน้อยกว่าพ่อแม่และลูกขวามีค่ามากกว่าพ่อแม่:</p>
                         <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">TreeNode</span>:
     <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>, val=0):
         <span class="text-blue-300">self</span>.val = val
@@ -129,7 +129,7 @@ bst.insert(7)
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
                             class="flex-1 bg-gray-900 text-white p-3 rounded-lg font-mono text-sm resize-none h-64"
-                            placeholder="Write your code here..."></textarea>
+                            placeholder="เขียนโค้ดของคุณที่นี่..."></textarea>
 
                         <!-- Control Buttons -->
                         <button onclick="checkCode()" 
@@ -178,7 +178,7 @@ bst.insert(7)
             if (hasLine1 && hasLine2 && hasLine3 && hasLine4 && hasLine5 && hasLine6 && hasLine7 && hasLine8 && hasLine9) {
                 output = `
                     <div class="text-green-500">
-                        ✅ Correct! All missing lines found:
+                        Correct! All missing lines found:
                         <br>
                         1. ${missingLine1}
                         <br>
@@ -206,7 +206,7 @@ bst.insert(7)
             } else {
                 output = `
                     <div class="text-red-500">
-                        ❌ Not complete yet. Missing:
+                        Not complete yet. Missing:
                         ${!hasLine1 ? '<br>- Check if value is less than current' : ''}
                         ${!hasLine2 ? '<br>- Insert new node to left' : ''}
                         ${!hasLine3 ? '<br>- Move to left child' : ''}

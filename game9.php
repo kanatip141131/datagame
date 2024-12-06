@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game DataStructure - Level 3</title>
+    <title>Game DataStructure - Level 9</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -72,12 +72,12 @@
             <div class="bg-gray-800 rounded-lg shadow-xl p-4 h-full flex flex-col">
                 <!-- Level Header -->
                 <div class="flex justify-between items-center mb-2">
-                    <h1 class="text-xl font-bold text-blue-400">Level 3</h1>
+                    <h1 class="text-xl font-bold text-blue-400">Level 9</h1>
                     <div class="flex items-center space-x-4">
-                        <span class="text-sm">Level 3 of 12</span>
+                        <span class="text-sm">Level 9 of 12</span>
                         <div class="flex space-x-1">
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='game2.php'">&lt;</button>
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='game4.php'">&gt;</button>
+                            <a href="game8.php" class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&lt;</a>
+                            <a href="game10.php" class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&gt;</a>
                         </div>
                     </div>
                 </div>
@@ -86,26 +86,33 @@
                     <!-- Left Column: Problem Description -->
                     <div class="bg-gray-700 rounded-lg p-3 overflow-auto">
                         <h2 class="text-lg font-bold mb-2">คำอธิบายโจทย์</h2>
-                        <p class="text-sm text-gray-300 mb-2">จงเติมส่วนที่หายไปของโค้ดต่อไปนี้เพื่อตรวจสอบวงจรใน linked list โดยใช้ Floyd's Cycle-Finding Algorithm:</p>
-                        <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">ListNode</span>:
-    <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>, <span class="text-blue-300">val</span>=0):
+                        <p class="text-sm text-gray-300 mb-2">จงสร้าง Linked List ที่สามารถแทรกและลบ node ได้ในเวลา O(1):</p>
+                        <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">Node</span>:
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>, val):
         <span class="text-blue-300">self</span>.val = val
         <span class="text-blue-300">self</span>.next = <span class="text-purple-400">None</span>
 
-<span class="text-purple-400">def</span> <span class="text-yellow-300">has_cycle</span>(<span class="text-blue-300">head</span>):
-    <span class="text-purple-400">if</span> <span class="text-blue-300">head</span> <span class="text-purple-400">is</span> <span class="text-purple-400">None</span>:
-        <span class="text-purple-400">return</span> <span class="text-purple-400">False</span>
-        
-    <span class="text-blue-300">slow</span> = <span class="text-blue-300">head</span>
-    <span class="text-blue-300">fast</span> = <span class="text-blue-300">head</span>
-    
-    <span class="text-gray-400"># จุดนี้หายไป: เขียนโค้ดเพื่อตรวจสอบ cycle</span>
-    <span class="text-gray-400"># ใช้ Floyd's Cycle-Finding Algorithm</span>
-    <span class="text-gray-400"># โดยให้ slow pointer เดิน 1 ก้าว</span>
-    <span class="text-gray-400"># และ fast pointer เดิน 2 ก้าว</span></code></pre>
+<span class="text-purple-400">class</span> <span class="text-yellow-300">LinkedList</span>:
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>):
+        <span class="text-blue-300">self</span>.head = <span class="text-purple-400">None</span>
+
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">insert</span>(<span class="text-blue-300">self</span>, node):
+        <span class="text-gray-400"># จุดนี้หายไป: แทรก node ที่จุดเริ่มต้น</span>
+
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">delete</span>(<span class="text-blue-300">self</span>, node):
+        <span class="text-gray-400"># จุดนี้หายไป: ลบ node ที่จุดเริ่มต้น</span>
+
+<span class="text-gray-400"># ตัวอย่างการใช้งาน</span>
+linked_list = LinkedList()
+node1 = Node(1)
+node2 = Node(2)
+linked_list.insert(node1)
+linked_list.insert(node2)
+linked_list.delete(node1)
+<span class="text-yellow-300">print</span>(<span class="text-green-300">f"Head: {linked_list.head.val}"</span>)</code></pre>
                     </div>
 
-                    <!-- Right Column: Code Editor -->
+                    <!-- Right Column: Code Editor and Output -->
                     <div class="flex flex-col space-y-2">
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
@@ -134,26 +141,22 @@
             const code = document.getElementById('codeEditor').value;
             const outputArea = document.getElementById('outputArea');
             
-            const missingLine1 = "while fast and fast.next:";
-            const missingLine2 = "slow = slow.next";
-            const missingLine3 = "fast = fast.next.next";
-            const missingLine4 = "if slow == fast:";
-            const missingLine5 = "return True";
-            const missingLine6 = "return False";
+            const missingLine1 = "node.next = self.head";
+            const missingLine2 = "self.head = node";
+            const missingLine3 = "if self.head == node:";
+            const missingLine4 = "self.head = self.head.next";
             
             const hasLine1 = code.includes(missingLine1);
             const hasLine2 = code.includes(missingLine2);
             const hasLine3 = code.includes(missingLine3);
             const hasLine4 = code.includes(missingLine4);
-            const hasLine5 = code.includes(missingLine5);
-            const hasLine6 = code.includes(missingLine6);
             
             let output = '';
             
-            if (hasLine1 && hasLine2 && hasLine3 && hasLine4 && hasLine5 && hasLine6) {
+            if (hasLine1 && hasLine2 && hasLine3 && hasLine4) {
                 output = `
                     <div class="text-green-500">
-                        Correct! All missing lines found:
+                        ✅ Correct! All missing lines found:
                         <br>
                         1. ${missingLine1}
                         <br>
@@ -163,11 +166,7 @@
                         <br>
                         4. ${missingLine4}
                         <br>
-                        5. ${missingLine5}
-                        <br>
-                        6. ${missingLine6}
-                        <br>
-                        <a href="game4.php" class="inline-block mt-2 bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition text-white text-sm">
+                        <a href="game10.php" class="inline-block mt-2 bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition text-white text-sm">
                             Next Level →
                         </a>
                     </div>
@@ -175,13 +174,11 @@
             } else {
                 output = `
                     <div class="text-red-500">
-                        Not complete yet. Missing:
-                        ${!hasLine1 ? '<br>- While loop condition' : ''}
-                        ${!hasLine2 ? '<br>- Move slow pointer' : ''}
-                        ${!hasLine3 ? '<br>- Move fast pointer' : ''}
-                        ${!hasLine4 ? '<br>- Check if pointers meet' : ''}
-                        ${!hasLine5 ? '<br>- Return True when cycle found' : ''}
-                        ${!hasLine6 ? '<br>- Return False when no cycle' : ''}
+                        ❌ ยังไม่ถูกต้อง กรุณาตรวจสอบโค้ดของคุณอีกครั้ง:
+                        ${!hasLine1 ? '<br>- แทรก node ที่จุดเริ่มต้น' : ''}
+                        ${!hasLine2 ? '<br>- กำหนด head เป็น node ใหม่' : ''}
+                        ${!hasLine3 ? '<br>- ตรวจสอบและลบ node ที่จุดเริ่มต้น' : ''}
+                        ${!hasLine4 ? '<br>- อัพเดท head เป็น node ถัดไป' : ''}
                     </div>
                 `;
             }

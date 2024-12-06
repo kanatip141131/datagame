@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game DataStructure - Level 3</title>
+    <title>Game DataStructure - Level 8</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -72,12 +72,12 @@
             <div class="bg-gray-800 rounded-lg shadow-xl p-4 h-full flex flex-col">
                 <!-- Level Header -->
                 <div class="flex justify-between items-center mb-2">
-                    <h1 class="text-xl font-bold text-blue-400">Level 3</h1>
+                    <h1 class="text-xl font-bold text-blue-400">Level 8</h1>
                     <div class="flex items-center space-x-4">
-                        <span class="text-sm">Level 3 of 12</span>
+                        <span class="text-sm">Level 8 of 12</span>
                         <div class="flex space-x-1">
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='game2.php'">&lt;</button>
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='game4.php'">&gt;</button>
+                            <a href="game7.php" class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&lt;</a>
+                            <a href="game9.php" class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&gt;</a>
                         </div>
                     </div>
                 </div>
@@ -86,26 +86,32 @@
                     <!-- Left Column: Problem Description -->
                     <div class="bg-gray-700 rounded-lg p-3 overflow-auto">
                         <h2 class="text-lg font-bold mb-2">คำอธิบายโจทย์</h2>
-                        <p class="text-sm text-gray-300 mb-2">จงเติมส่วนที่หายไปของโค้ดต่อไปนี้เพื่อตรวจสอบวงจรใน linked list โดยใช้ Floyd's Cycle-Finding Algorithm:</p>
-                        <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">ListNode</span>:
-    <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>, <span class="text-blue-300">val</span>=0):
-        <span class="text-blue-300">self</span>.val = val
-        <span class="text-blue-300">self</span>.next = <span class="text-purple-400">None</span>
+                        <p class="text-sm text-gray-300 mb-2">จงสร้าง Stack ที่สามารถดึงค่าต่ำสุดได้ในเวลา O(1) โดยใช้โครงสร้างข้อมูลที่เหมาะสม:</p>
+                        <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">MinStack</span>:
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>):
+        <span class="text-blue-300">self</span>.stack = []
+        <span class="text-blue-300">self</span>.min_stack = []
 
-<span class="text-purple-400">def</span> <span class="text-yellow-300">has_cycle</span>(<span class="text-blue-300">head</span>):
-    <span class="text-purple-400">if</span> <span class="text-blue-300">head</span> <span class="text-purple-400">is</span> <span class="text-purple-400">None</span>:
-        <span class="text-purple-400">return</span> <span class="text-purple-400">False</span>
-        
-    <span class="text-blue-300">slow</span> = <span class="text-blue-300">head</span>
-    <span class="text-blue-300">fast</span> = <span class="text-blue-300">head</span>
-    
-    <span class="text-gray-400"># จุดนี้หายไป: เขียนโค้ดเพื่อตรวจสอบ cycle</span>
-    <span class="text-gray-400"># ใช้ Floyd's Cycle-Finding Algorithm</span>
-    <span class="text-gray-400"># โดยให้ slow pointer เดิน 1 ก้าว</span>
-    <span class="text-gray-400"># และ fast pointer เดิน 2 ก้าว</span></code></pre>
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">push</span>(<span class="text-blue-300">self</span>, val):
+        <span class="text-gray-400"># จุดนี้หายไป: เพิ่ม val ไปที่ stack และอัพเดท min_stack</span>
+
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">pop</span>(<span class="text-blue-300">self</span>):
+        <span class="text-gray-400"># จุดนี้หายไป: นำค่าออกจาก stack และอัพเดท min_stack</span>
+
+    <span class="text-purple-400">def</span> <span class="text-yellow-300">get_min</span>(<span class="text-blue-300">self</span>):
+        <span class="text-gray-400"># จุดนี้หายไป: คืนค่าต่ำสุดจาก min_stack</span>
+
+<span class="text-gray-400"># ตัวอย่างการใช้งาน</span>
+min_stack = MinStack()
+min_stack.push(3)
+min_stack.push(5)
+min_stack.push(2)
+<span class="text-yellow-300">print</span>(<span class="text-green-300">f"Min: {min_stack.get_min()}"</span>)
+min_stack.pop()
+<span class="text-yellow-300">print</span>(<span class="text-green-300">f"Min: {min_stack.get_min()}"</span>)</code></pre>
                     </div>
 
-                    <!-- Right Column: Code Editor -->
+                    <!-- Right Column: Code Editor and Output -->
                     <div class="flex flex-col space-y-2">
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
@@ -134,12 +140,12 @@
             const code = document.getElementById('codeEditor').value;
             const outputArea = document.getElementById('outputArea');
             
-            const missingLine1 = "while fast and fast.next:";
-            const missingLine2 = "slow = slow.next";
-            const missingLine3 = "fast = fast.next.next";
-            const missingLine4 = "if slow == fast:";
-            const missingLine5 = "return True";
-            const missingLine6 = "return False";
+            const missingLine1 = "self.stack.append(val)";
+            const missingLine2 = "if not self.min_stack or val <= self.min_stack[-1]:";
+            const missingLine3 = "self.min_stack.append(val)";
+            const missingLine4 = "if self.stack.pop() == self.min_stack[-1]:";
+            const missingLine5 = "self.min_stack.pop()";
+            const missingLine6 = "return self.min_stack[-1]";
             
             const hasLine1 = code.includes(missingLine1);
             const hasLine2 = code.includes(missingLine2);
@@ -153,7 +159,7 @@
             if (hasLine1 && hasLine2 && hasLine3 && hasLine4 && hasLine5 && hasLine6) {
                 output = `
                     <div class="text-green-500">
-                        Correct! All missing lines found:
+                        ✅ Correct! All missing lines found:
                         <br>
                         1. ${missingLine1}
                         <br>
@@ -167,7 +173,7 @@
                         <br>
                         6. ${missingLine6}
                         <br>
-                        <a href="game4.php" class="inline-block mt-2 bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition text-white text-sm">
+                        <a href="game9.php" class="inline-block mt-2 bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg transition text-white text-sm">
                             Next Level →
                         </a>
                     </div>
@@ -175,13 +181,13 @@
             } else {
                 output = `
                     <div class="text-red-500">
-                        Not complete yet. Missing:
-                        ${!hasLine1 ? '<br>- While loop condition' : ''}
-                        ${!hasLine2 ? '<br>- Move slow pointer' : ''}
-                        ${!hasLine3 ? '<br>- Move fast pointer' : ''}
-                        ${!hasLine4 ? '<br>- Check if pointers meet' : ''}
-                        ${!hasLine5 ? '<br>- Return True when cycle found' : ''}
-                        ${!hasLine6 ? '<br>- Return False when no cycle' : ''}
+                        ❌ ยังไม่ถูกต้อง กรุณาตรวจสอบโค้ดของคุณอีกครั้ง:
+                        ${!hasLine1 ? '<br>- เพิ่ม val ไปที่ stack' : ''}
+                        ${!hasLine2 ? '<br>- ตรวจสอบและอัพเดท min_stack' : ''}
+                        ${!hasLine3 ? '<br>- เพิ่ม val ไปที่ min_stack' : ''}
+                        ${!hasLine4 ? '<br>- ตรวจสอบและ pop จาก min_stack' : ''}
+                        ${!hasLine5 ? '<br>- pop จาก min_stack' : ''}
+                        ${!hasLine6 ? '<br>- คืนค่าต่ำสุดจาก min_stack' : ''}
                     </div>
                 `;
             }

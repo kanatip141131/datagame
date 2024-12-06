@@ -85,8 +85,8 @@
                 <div class="grid grid-cols-2 gap-4 flex-1 overflow-hidden">
                     <!-- Left Column: Problem Description -->
                     <div class="bg-gray-700 rounded-lg p-3 overflow-auto">
-                        <h2 class="text-lg font-bold mb-2">Problem Description</h2>
-                        <p class="text-sm text-gray-300 mb-2">Complete the missing parts to solve the Print Queue problem. In this problem, we need to manage document printing using priority queue:</p>
+                        <h2 class="text-lg font-bold mb-2">คำอธิบายโจทย์</h2>
+                        <p class="text-sm text-gray-300 mb-2">จงเติมส่วนที่หายไปเพื่อแก้ปัญหา Print Queue ในปัญหานี้ เราจำเป็นต้องจัดการการพิมพ์เอกสารโดยใช้ priority queue:</p>
                         <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">class</span> <span class="text-yellow-300">PrintQueue</span>:
     <span class="text-purple-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-300">self</span>):
         <span class="text-blue-300">self</span>.queue = []  <span class="text-gray-400"># [(priority, document)]</span>
@@ -115,7 +115,7 @@ printer.add_document("Report C", 3)
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
                             class="flex-1 bg-gray-900 text-white p-3 rounded-lg font-mono text-sm resize-none h-64"
-                            placeholder="Write your code here..."></textarea>
+                            placeholder="เขียนโค้ดของคุณที่นี่..."></textarea>
 
                         <!-- Control Buttons -->
                         <button onclick="checkCode()" 
@@ -152,7 +152,7 @@ printer.add_document("Report C", 3)
             if (hasLine1 && hasLine2 && hasLine3) {
                 output = `
                     <div class="text-green-500">
-                        ✅ Correct! All missing lines found:
+                        Correct! All missing lines found:
                         <br>
                         1. ${missingLine1}
                         <br>
@@ -168,7 +168,7 @@ printer.add_document("Report C", 3)
             } else {
                 output = `
                     <div class="text-red-500">
-                        ❌ Not complete yet. Missing:
+                        Not complete yet. Missing:
                         ${!hasLine1 ? '<br>- Line to add document to queue' : ''}
                         ${!hasLine2 ? '<br>- Line to find highest priority document' : ''}
                         ${!hasLine3 ? '<br>- Line to remove and return highest priority document' : ''}

@@ -11,7 +11,7 @@
                 extend: {
                     colors: {
                         team: {
-                            white: '#fffffd',
+                            white: '#ffffff',
                             blue: '#1e40af',
                             black: '#111827',
                         }
@@ -76,8 +76,8 @@
                     <div class="flex items-center space-x-4">
                         <span class="text-sm">Level 2 of 12</span>
                         <div class="flex space-x-1">
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&lt;</button>
-                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm">&gt;</button>
+                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='dashboard.php'">&lt;</button>
+                            <button class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition text-sm" onclick="location.href='game3.php'">&gt;</button>
                         </div>
                     </div>
                 </div>
@@ -85,8 +85,8 @@
                 <div class="grid grid-cols-2 gap-4 flex-1 overflow-hidden">
                     <!-- Left Column: Problem Description -->
                     <div class="bg-gray-700 rounded-lg p-3 overflow-auto">
-                        <h2 class="text-lg font-bold mb-2">Problem Description</h2>
-                        <p class="text-sm text-gray-300 mb-2">Complete the missing parts of the following code to find a pair of numbers that sum to the target:</p>
+                        <h2 class="text-lg font-bold mb-2">คำอธิบายโจทย์</h2>
+                        <p class="text-sm text-gray-300 mb-2">จงเติมส่วนที่หายไปของโค้ดต่อไปนี้เพื่อหาคู่ตัวเลขที่มีผลรวมเท่ากับเป้าหมาย:</p>
                         <pre class="bg-gray-800 p-3 rounded-lg text-sm font-mono"><code><span class="text-purple-400">def</span> <span class="text-yellow-300">find_pair_sum</span>(<span class="text-blue-300">arr</span>, <span class="text-blue-300">target</span>):
     <span class="text-blue-300">seen</span> = <span class="text-yellow-300">set</span>()
     <span class="text-purple-400">for</span> <span class="text-blue-300">num</span> <span class="text-purple-400">in</span> <span class="text-blue-300">arr</span>:
@@ -108,8 +108,8 @@
                     <div class="flex flex-col space-y-2">
                         <!-- Code Editor -->
                         <textarea id="codeEditor" 
-                            class="flex-1 bg-gray-900 text-white p-3 rounded-lg font-mono text-sm resize-none"
-                            placeholder="Write your code here..."></textarea>
+                            class="flex-1 bg-gray-900 text-white p-3 rounded-lg font-mono text-sm resize-none h-64"
+                            placeholder="เขียนโค้ดของคุณที่นี่..."></textarea>
 
                         <!-- Control Buttons -->
                         <button onclick="checkCode()" 
@@ -146,7 +146,7 @@
             if (hasLine1 && hasLine2 && hasLine3) {
                 output = `
                     <div class="text-green-500">
-                        ✅ Correct! All missing lines found:
+                        Correct! All missing lines found:
                         <br>
                         1. ${missingLine1}
                         <br>
@@ -162,7 +162,7 @@
             } else {
                 output = `
                     <div class="text-red-500">
-                        ❌ Not complete yet. Missing:
+                        Not complete yet. Missing:
                         ${!hasLine1 ? '<br>- Line to calculate complement' : ''}
                         ${!hasLine2 ? '<br>- Line to add number to seen set' : ''}
                         ${!hasLine3 ? '<br>- Line to call find_pair_sum function' : ''}
