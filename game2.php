@@ -11,7 +11,7 @@
                 extend: {
                     colors: {
                         team: {
-                            white: '#ffffff',
+                            white: '#fffffd',
                             blue: '#1e40af',
                             black: '#111827',
                         }
