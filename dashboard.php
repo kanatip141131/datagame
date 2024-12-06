@@ -31,8 +31,8 @@
                 </div>
                 <div class="flex space-x-6">
                     <a href="dashboard.php" class="text-white hover:text-gray-200 transition text-sm">Games</a>
-                    <a href="login-process.php" class="text-white hover:text-gray-200 transition text-sm">Login</a>
-                    <a href="register-process.php" class="text-white hover:text-gray-200 transition text-sm">Register</a>
+                    <a href="login.php" class="text-white hover:text-gray-200 transition text-sm">Login</a>
+                    <a href="register.php" class="text-white hover:text-gray-200 transition text-sm">Register</a>
                 </div>
             </div>
         </div>
